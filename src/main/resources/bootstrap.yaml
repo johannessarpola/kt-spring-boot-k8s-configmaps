@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo
+  cloud:
+    kubernetes:
+      enabled: false
+info:
+  app:
+    version: "1.0"

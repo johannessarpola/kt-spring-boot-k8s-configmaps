@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: configmap-reader
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: role-configmap-reader
+rules:
+  - apiGroups: [""]
+    verbs: ["get", "list", "watch"]
+    resources: ["pods","configmaps"]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rolebinding-configmap-reader
+subjects:
+  - kind: ServiceAccount
+    name: configmap-reader
+roleRef:
+  kind: Role
+  name: role-configmap-reader
+  apiGroup: rbac.authorization.k8s.io

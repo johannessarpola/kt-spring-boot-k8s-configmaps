@@ -1,0 +1,3 @@
+app:
+  id: "dev-messenger"
+  message: "Hello from Local"

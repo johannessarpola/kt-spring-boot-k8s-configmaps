@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: kubernetes # 1
+  cloud:
+    kubernetes:
+      enabled: true # 2
+      reload:
+        enabled: true # 3
+        mode: event # 4
+      config:
+        enabled: true # 5
+        namespace: default
+        sources:
+          - name: demo-cm
+        enableVersioning: true
+      client:
+        namespace: engine

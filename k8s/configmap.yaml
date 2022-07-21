@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo-cm
+  labels:
+    version: "1.0"
+    app: demo
+data:
+  #application.yml: |-
+  app.id: prod
+  app.message: Hello from Kubernetes
